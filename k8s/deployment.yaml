@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ci-cd-practice
+  labels:
+    app: ci-cd-practice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ci-cd-practice
+  template:
+    metadata:
+      labels:
+        app: ci-cd-practice
+    spec:
+      containers:
+      - name: ci-cd-practice
+        image: ghcr.io/hppnw/ci-cd-practice:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
