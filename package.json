@@ -6,7 +6,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "lint": "eslint . --ext .js",
+    "lint": "npx eslint .",
     "test": "echo \"No tests\""
   },
   "devDependencies": {
