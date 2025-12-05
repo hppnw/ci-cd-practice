@@ -29,6 +29,9 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Run lint
+        run: npm run lint
+
   # 第二步：构建并推送 Docker 镜像
   build-and-push:
     needs: test
