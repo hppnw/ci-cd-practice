@@ -1,6 +1,10 @@
 {
   "name": "ci-cd-practice",
   "version": "1.0.0",
+  "description": "CI/CD practice with GitHub Actions and Docker",
+  "main": "app.js",
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "lint": "eslint . --ext .js",
     "test": "echo \"No tests\""
